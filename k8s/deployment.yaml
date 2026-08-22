@@ -23,7 +23,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: nasa-apod-app
-          image: ghcr.io/kevwal1/nasa-apod:pending
+          image: ghcr.io/kevwal1/nasa-apod:d55942657796fcfad2eb7a4b79bdf0cdafd7c0e5@sha256:75dcad182ec9a0215f7ed8f6425bd83c3332f37284edc60284dd1e85effcc872
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
