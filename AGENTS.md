@@ -24,13 +24,13 @@ details when they can be verified from the code or deployment files.
 
 The Kubernetes/container application listens on:
 
-    8081
+    8080
 
 The Kubernetes deployment and service currently use port:
 
-    8081
+    8080
 
-Do not change this port casually.
+The production container uses Gunicorn and numeric non-root UID `10001`.
 
 ## Kubernetes
 
@@ -39,6 +39,9 @@ This application is intended to run on the home Kubernetes cluster.
 Deployment manifests live under:
 
     k8s/
+
+They define an `apps`-namespace Deployment, ClusterIP Service, and standard
+Ingress using `ingressClassName: traefik`. `/apod/` is preserved end to end.
 
 The application is exposed through appServer nginx at:
 

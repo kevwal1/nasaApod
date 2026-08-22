@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NASA Astronomy Picture of the Day</title>
+  <link rel="stylesheet" href="/shared-style/portal-theme.css">
   <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
-      background: radial-gradient(circle at top left, #1f2933, #020617);
-      color: #e5e7eb;
-      min-height: 100vh;
-    }
+    body { min-height: 100vh; }
     .container {
       max-width: 960px;
       margin: 0 auto;
@@ -22,16 +18,12 @@
       letter-spacing: 0.03em;
     }
     .date {
-      color: #9ca3af;
+      color: var(--portal-muted);
       margin-bottom: 1rem;
       font-size: 0.95rem;
     }
     .panel {
-      background: #020617;
-      border-radius: 14px;
       padding: 1.25rem 1.35rem;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.35);
     }
     .media {
       margin: 1rem 0 0.5rem;
@@ -41,12 +33,10 @@
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.35);
     }
     iframe {
       width: 100%;
       min-height: 400px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.8);
     }
@@ -56,18 +46,18 @@
       color: #d1d5db;
     }
     .error {
-      color: #f87171;
+      color: var(--portal-danger);
       font-weight: 700;
       margin-top: 0.5rem;
     }
   </style>
 </head>
-<body>
+<body class="portal-theme-body">
   <div class="container">
     <h1>NASA Astronomy Picture of the Day</h1>
-    <div class="panel">
+    <div class="panel portal-theme-panel">
       {% if error %}
-        <div class="error">Error fetching APOD: {{ error }}</div>
+        <div class="error" role="alert">{{ error }}</div>
       {% endif %}
 
       {% if data %}
